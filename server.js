@@ -1,5 +1,6 @@
 //importing external module 
 const express = require('express');
+
 // app use express
 const app = express();
 //creating port 
@@ -15,8 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 require('./routes/htmlroutes')(app);
 //require('./routes/apiroutes')(app);
 
+// Connect to the database before starting the Express.js server
+sequalize.sync().then(()=>
 app.listen(PORT, () => {
     console.log('========================= ')
     console.log(`Server available at ${PORT}`)
     console.log('========================= ')
-}); 
+})); 
