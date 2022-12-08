@@ -3,7 +3,7 @@ const express = require('express');
 // app use express
 const app = express();
 //creating port 
-const PORT = process.env.PORT || 3001; 
+const PORT = process.env.PORT || 3001;
 
 //using static assets through express middleweare 
 app.use(express.static('public'));
@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 require('./routes/htmlroutes')(app);
 //require('./routes/apiroutes')(app);
 
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log('========================= ')
     console.log(`Server available at ${PORT}`)
     console.log('========================= ')
