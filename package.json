@@ -19,7 +19,10 @@
   },
   "homepage": "https://github.com/TyreseKing/Manager-of-The-Task#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.11.0",
     "uniqid": "^5.4.0"
   }
 }
