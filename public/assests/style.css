@@ -19,7 +19,10 @@
     --green: #8EC270;
 }
 
-#herro {
+.herro {
     background-color: #0a191b;
     color: --var(--dark);
 }
+
+div.container {border-style: outset;}
+
