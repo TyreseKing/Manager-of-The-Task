@@ -1,5 +1,8 @@
-const myModal = new bootstrap.Modal(document.getElementById('myModal'), options)
-// or
-//const myModalAlternative = new bootstrap.Modal('#myModal', options)
+let taskName; 
+let taskType; 
+let taskText;
+//let newTaskButton
 
-addEventListener.myModal('click')
+if(window.location.pathname === '/task'){
+
+}
