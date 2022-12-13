@@ -60,4 +60,4 @@ User.init(
   }
 );
 
-module.exports = Reader;
+module.exports = User;
