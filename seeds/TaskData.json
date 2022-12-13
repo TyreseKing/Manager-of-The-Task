@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "task_name": "Finish school work",
+        "task_type": "school",
+        "task_note": "Task Management Project"
+    },
+    {
+        "id": 2,
+        "task_name": "Finish sending emails",
+        "task_type": "work",
+        "task_note": "Project X| Requires sending emails to decision makers"
+    },
+    {
+        "id": 3,
+        "task_name": "Crafting",
+        "task_type": "fun",
+        "task_note": "Get supplies for christmas decorations"
+    }
+]

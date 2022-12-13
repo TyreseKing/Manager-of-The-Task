@@ -20,7 +20,7 @@ fetch('/api/task', {
     method: 'GET', 
     headers: {
         'Content-Type': 'application/json', 
-//what does this look like for SQL? 
+//how do we change this? 
     }, 
 }); 
 

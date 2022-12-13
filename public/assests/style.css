@@ -9,14 +9,8 @@
 
 /* Setting the root elements and variables. Used coolors.co to generate color palete for the application*/
 :root {
-    --natural: #F5EFFA;
-    --purple: #9381FF;
-    --pink: #C371AB;
     --dark: #000000;
     --white: #FFFFFF;
-    --wrong: #C371AB;
-    --right: #A5D1F3;
-    --green: #8EC270;
 }
 
 .herro {
