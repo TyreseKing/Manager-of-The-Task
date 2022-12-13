@@ -12,7 +12,7 @@ router.get('/task', async(req,res)=> {
         include: [
             [
                 sequelize.literal(
-                    '(SELECT '
+                    '(SELECT task_name,task_type, task_notes FROM task)'
                 ),
                 'tasks,'
             ],
@@ -26,7 +26,7 @@ router.get('/task', async(req,res)=> {
 });
 
   
-  // GET a single driver
+  // GET a single task
   router.get('/task:id', async (req, res) => {
     try {
       const taskData = await Tasks.findByPk(req.params.id, {
@@ -34,7 +34,6 @@ router.get('/task', async(req,res)=> {
         attributes: {
           include: [
             [
-              // Use plain SQL to add up the total mileage
               sequelize.literal(
                 '(SELECT task_name, task_type, task,notes FROM task WHERE task.id = task.id)'
               ),
