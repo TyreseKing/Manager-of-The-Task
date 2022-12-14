@@ -1,23 +1,24 @@
 const router = require('express').Router();
-const sequelize = require('.../config/connection.js');
-const { id, task_name, task_type, task_note } = require('.../models');
+const sequelize = require('../../config/connection');
+const { id, task_name, task_type, task_note } = require('../../models');
 const Tasks = require('../../models/tasks');
 
 
 //get all tasks
-router.get('/task', async(req,res)=> {
+router.get('/', async(req,res)=> {
+  console.log('task');
    try {const taskData = await Tasks.findAll({
-    include: [{model: Tasks}],
-    attributes: {
-        include: [
-            [
-                sequelize.literal(
-                    '(SELECT task_name,task_type, task_notes FROM task)'
-                ),
-                'tasks,'
-            ],
-        ],
-    },
+    // include: [{model: Tasks}],
+    // attributes: {
+        // include: [
+        //     [
+        //         sequelize.literal(
+        //             '(SELECT task_name,task_type, task_notes FROM task)'
+        //         ),
+        //         'tasks,'
+        //     ],
+        // ],
+    // },
    });
    res.status(200).json(taskData);
     } catch (err) {

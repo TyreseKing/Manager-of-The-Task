@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeds/seeds.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,8 @@
   },
   "homepage": "https://github.com/TyreseKing/Manager-of-The-Task#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "debug": "^4.3.4",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mysql2": "^2.3.3",

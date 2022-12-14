@@ -14,7 +14,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 require('./routes/htmlroutes')(app);
+app.use(require('./routes/apiroutes'));
 //require('./routes/apiroutes')(app);
+
 
 // Connect to the database before starting the Express.js server
 sequalize.sync().then(()=>

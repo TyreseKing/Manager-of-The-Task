@@ -12,9 +12,9 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const Tasks of TaskData) {
+  for (const Task of TaskData) {
     await Tasks.create({
-      ...tasks,
+      ...Task,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
