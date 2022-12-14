@@ -13,6 +13,10 @@ function getinfo() {
     var notes = note.value
     console.log(tType.value);
     var type = tType.value
+
+    if(type === "Open this select menu" || notes === "" || namevalue === "") {
+        alert("Your task is missing information")
+    }
 }
 
 createbtn.addEventListener("click",getinfo)

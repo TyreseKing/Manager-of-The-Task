@@ -1,12 +1,12 @@
-const User = require('./User');
+const User = require('./user');
 const Tasks = require('./tasks');
 
-User.hasMany(Project, {
+User.hasMany(Tasks, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-Project.belongsTo(User, {
+Tasks.belongsTo(User, {
   foreignKey: 'user_id'
 });
 

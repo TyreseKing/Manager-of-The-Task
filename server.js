@@ -1,25 +1,41 @@
-//importing external module 
+const path = require('path');
 const express = require('express');
-const sequalize = require('./config/connection');
-// app use express
+const session = require('express-session');
+const exphbs = require('express-handlebars');
+const routes = require('./controllers');
+const helpers = require('./utils/helpers');
+
+const sequelize = require('./config/connection');
+
+// Create a new sequelize store using the express-session package
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 const app = express();
-//creating port 
-const PORT = process.env.PORT || 3305;
+const PORT = process.env.PORT || 3001;
 
-//using static assets through express middleweare 
-app.use(express.static('public'));
-// Middleware for the parsing of JSON dataclec
+const hbs = exphbs.create({ helpers });
+
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+app.use(session(sess));
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
 app.use(express.json());
-// Middleware for parsing of URL encoded data
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-require('./routes/htmlroutes')(app);
-//require('./routes/apiroutes')(app);
+app.use(routes);
 
-// Connect to the database before starting the Express.js server
-sequalize.sync().then(()=>
-app.listen(PORT, () => {
-    console.log('========================= ')
-    console.log(`Server available at ${PORT}`)
-    console.log('========================= ')
-})); 
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
+});
