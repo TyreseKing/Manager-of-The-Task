@@ -5,6 +5,8 @@ let taskType;
 let taskText;
 let newTaskButton;
 
+
+
 if(window.location.pathname === '/task'){
 taskName = document.querySelector('');
 taskType = document.querySelector('');
@@ -89,3 +91,34 @@ const hangleNoteDelete = (e) => {
 const createTk = (text, delbtn = true)=>{
     
 }
+
+
+
+// // import express from "express"
+// // import path from "path"
+// // import exphbs from "express-handlebars"
+  
+
+// const app = express();
+  
+// const PORT = process.env.PORT || 3001;
+  
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
+  
+// app.use(express.static("images"));
+  
+
+// app.get("/static", (req, res) => {
+//     res.render("static");
+// });
+  
+
+// app.get("/dynamic", (req, res) => {
+//     imageList = [];
+//     imageList.push({ src: "icons/TaskZ.png", name: "TaskZ" });
+//     res.render("dynamic", { imageList: imageList });
+// })
+  
+
+// app.listen(PORT, () => console.log(`Server started running on PORT ${PORT}`));
