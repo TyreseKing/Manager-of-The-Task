@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS tasks_db;
 CREATE DATABASE tasks_db;
-tasks_db;
+USE tasks_db;
 
 -- CREATE TABLE task (
 --     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
