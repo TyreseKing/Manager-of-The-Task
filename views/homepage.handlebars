@@ -2,7 +2,7 @@
     <div class="col align-items-center text-wrap p-5 m-3 bg-info herro">
         <h2> Welcome to TaskZ! </h2> <br>
         <p> A innvative task tracking app that helps you organize your life! </p> <br>
-        <button class="btn btn-primary btn-lg mt-4" formenctype="/login"> Get Started</button>
+        <button onClick="homepagebutton()" class="btn btn-primary btn-lg mt-4" formenctype="/login"> Get Started</button>
     </div>
 </div>
 </div>
@@ -17,3 +17,7 @@
         <br>
     </div>
 </div>
+
+<script>function homepagebutton(){
+window.location.assign("/api/users/login");
+};</script>
